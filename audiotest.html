@@ -1,0 +1,24 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>cowir audio test</title>
+<style>body{background:#111;color:#eee;font:22px system-ui,sans-serif;margin:12px}button{font-size:32px;padding:24px;width:100%;background:#c80;color:#000;border:0;border-radius:12px}
+table{border-collapse:collapse;width:100%;margin:10px 0}td,th{border:1px solid #444;padding:8px;text-align:left;vertical-align:top}.P{color:#6f6;font-weight:bold}.F{color:#f66;font-weight:bold}textarea{width:100%;height:220px;font-size:14px;background:#222;color:#eee}</style></head><body>
+<h1>Cowardly Irregular audio test</h1><button id="go">Run test (tap)</button><div id="ua"></div><table id="caps"></table><table id="res"><tr><th>Test</th><th>Result</th><th>Detail</th></tr></table>
+<p>Copy results:</p><textarea id="out" onclick="this.select()"></textarea>
+<script>
+const $=id=>document.getElementById(id),L=[];function log(s){L.push(s);$('out').value=L.join('\n')}
+function row(t,ok,d,tb='res'){const r=$(tb).insertRow();r.innerHTML='<td>'+t+'</td><td class="'+(ok===true?'P':ok===false?'F':'')+'">'+(ok===true?'PASS':ok===false?'FAIL':ok)+'</td><td>'+d+'</td>';log(t+' | '+(ok===true?'PASS':ok===false?'FAIL':ok)+' | '+d)}
+$('ua').textContent='UA: '+navigator.userAgent;log('UA: '+navigator.userAgent);
+const types=['audio/mpeg','audio/mp3','audio/mp4; codecs="mp4a.40.2"','audio/aac','audio/ogg; codecs="vorbis"','audio/ogg; codecs="opus"','audio/webm; codecs="opus"','audio/wav','audio/flac'];
+const A=document.createElement('audio');types.forEach(t=>{const v=A.canPlayType(t);row('canPlayType '+t,v?true:false,JSON.stringify(v),'caps')});
+row('AudioContext',!!window.AudioContext,'webkitAudioContext='+!!window.webkitAudioContext,'caps');
+types.forEach(t=>{let v='n/a';try{v=window.MediaSource?MediaSource.isTypeSupported(t):'no MediaSource'}catch(e){v='err '+e}row('MSE '+t,v===true,String(v),'caps')});
+const C=[['MP3 with art','test/clip_art.mp3'],['MP3 no art','test/clip_noart.mp3'],['M4A AAC','test/clip.m4a'],['M4A AAC with art','test/clip_art.m4a'],['OGG Opus','test/clip.ogg'],['WAV','test/clip.wav']];
+function el(n,u){return new Promise(res=>{const a=new Audio(),ev=[];let maxT=0,done=false;const fin=(ok,m)=>{if(done)return;done=true;a.pause();a.src='';res([ok,m+' | events: '+ev.join(',')+' | maxTime='+maxT.toFixed(2)])};
+['loadedmetadata','canplay','playing','stalled','waiting'].forEach(e=>a.addEventListener(e,()=>ev.push(e)));
+a.ontimeupdate=()=>{maxT=Math.max(maxT,a.currentTime);if(maxT>2)fin(true,'played to '+maxT.toFixed(2)+'s, dur='+a.duration)};
+a.onerror=()=>{const e=a.error;fin(false,'MediaError code='+(e&&e.code)+' msg='+(e&&e.message))};
+a.src=u;const p=a.play();if(p)p.catch(e=>fin(false,'play() rejected '+e.name+': '+e.message));setTimeout(()=>fin(maxT>0,'timeout 10s'),10000)})}
+async function wa(ctx,u){try{const b=await (await fetch(u)).arrayBuffer();const d=await ctx.decodeAudioData(b);return [true,'decoded '+d.duration.toFixed(2)+'s '+d.sampleRate+'Hz ch='+d.numberOfChannels]}catch(e){return [false,'decode error '+(e&&e.name)+': '+(e&&e.message)]}}
+$('go').onclick=async()=>{$('go').disabled=true;$('go').textContent='Running...';const AC=window.AudioContext||window.webkitAudioContext;const ctx=AC?new AC():null;if(ctx&&ctx.resume)ctx.resume();
+for(const [n,u] of C){const r=await el(n,u);row('audio-el '+n,r[0],r[1]);if(ctx){const w=await wa(ctx,u);row('WebAudio '+n,w[0],w[1])}}
+$('go').textContent='Done (tap to rerun)';$('go').disabled=false};
+</script></body></html>
