@@ -1,0 +1,47 @@
+01. Title Theme  [title]  2:45
+02. Medieval Overworld  [overworld_medieval]  2:45
+03. Medieval Village  [village_medieval]  2:45
+04. Harmonia  [village_harmonia]  2:45
+05. Conscription  [cutscene_w1_conscription]  2:45
+06. Medieval Dungeon  [dungeon_medieval]  2:45
+07. Medieval Battle  [battle_medieval]  2:45
+08. The Rat King  [boss_rat_king]  2:45
+09. Mordaine's Theme  [cutscene_mordaine_theme]  2:45
+10. Battle with Mordaine  [boss_mordaine]  2:45
+11. The Warden's Farewell  [cutscene_w1_warden_farewell]  2:31
+12. Portal Arrival  [cutscene_w2_portal_arrival]  2:45
+13. Suburban Overworld  [overworld_suburban]  2:45
+14. Maple Heights  [village_maple_heights]  2:45
+15. Suburban Dungeon  [dungeon_suburban]  2:45
+16. Suburban Battle  [battle_suburban]  2:45
+17. Cranky Lady  [battle_cranky_lady]  2:39
+18. Suburban Boss  [boss_suburban]  2:38
+19. The Coordinator's Memo  [cutscene_w2_coordinator_memo]  2:44
+20. Steampunk Overworld  [overworld_steampunk]  2:45
+21. Steampunk Village  [village_steampunk]  2:45
+22. Steampunk Battle  [battle_steampunk]  2:45
+23. Pattern Recognized  [cutscene_w3_pattern_recognized]  2:45
+24. Steampunk Boss  [boss_steampunk]  2:45
+25. Industrial Overworld  [overworld_industrial]  2:45
+26. Rivet Row  [village_rivet_row]  2:45
+27. Industrial Dungeon  [dungeon_industrial]  2:45
+28. Industrial Battle  [battle_industrial]  2:45
+29. The Foreman's Confession  [cutscene_w4_foreman_confession]  2:45
+30. Industrial Boss  [boss_industrial]  2:45
+31. Boot Sequence  [cutscene_w5_boot_sequence]  2:37
+32. Futuristic Overworld  [overworld_digital]  2:45
+33. Vertex  [village_vertex]  2:43
+34. Futuristic Dungeon  [dungeon_digital]  2:34
+35. Futuristic Battle  [battle_digital]  2:45
+36. Cached Memory  [cutscene_w5_cached_memory]  2:45
+37. Futuristic Boss  [boss_digital]  2:36
+38. Entering Nothing  [cutscene_w6_entering_nothing]  2:45
+39. Abstract Overworld  [overworld_abstract]  2:45
+40. Abstract Village  [village_abstract]  2:45
+41. Abstract Dungeon  [dungeon_abstract]  2:45
+42. Abstract Battle  [battle_abstract]  2:45
+43. Abstract Boss  [boss_abstract]  2:45
+44. Memory Is Love  [cutscene_w6_memory_is_love]  2:45
+45. Epilogue  [cutscene_w6_epilogue]  2:45
+46. Credits  [credits_abstract]  2:36
+Total: 46 tracks, 125:27
