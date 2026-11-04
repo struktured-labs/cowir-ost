@@ -44,4 +44,20 @@
 44. Memory Is Love  [cutscene_w6_memory_is_love]  2:45
 45. Epilogue  [cutscene_w6_epilogue]  2:45
 46. Credits  [credits_abstract]  2:36
-Total: 46 tracks, 125:27
+
+-- Monster Battles --
+47. Battle - Slime  [battle_slime]  2:45
+48. Battle - Wolf  [battle_wolf]  2:34
+49. Battle - Bat  [battle_bat]  2:39
+50. Battle - Mushroom  [battle_mushroom]  2:45
+51. Battle - Snake  [battle_snake]  2:40
+52. Battle - Ghost  [battle_ghost]  2:45
+53. Battle - Skeleton  [battle_skeleton]  2:45
+54. Battle - Imp  [battle_imp]  2:45
+55. Battle - Goblin  [battle_goblin]  2:45
+56. Battle - Brute  [battle_brute]  2:45
+57. Battle - Rogue Mailbox (Mimic)  [battle_rogue_mailbox]  2:45
+58. Battle - New Age Retro Hippie  [battle_new_age_retro_hippie]  2:45
+59. Battle - Skate Punk  [battle_skate_punk]  2:45
+60. Battle - Unassuming Dog  [battle_unassuming_dog]  2:45
+Total: 60 tracks, 163:31
